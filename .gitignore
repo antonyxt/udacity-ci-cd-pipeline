@@ -1,0 +1,6 @@
+.DS_Store
+.DS_Store?
+.ipynb_checkpoints
+.azure
+__pycache__/
+*.pyc
