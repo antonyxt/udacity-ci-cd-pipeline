@@ -51,4 +51,7 @@ Port: 443
 
 <TODO: Add link Screencast on YouTube>
 
+## Screenshots
 
+* Project cloned into Azure Cloud Shell
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/1.Project-Cloned-Azure-Cloud-Shell.png?raw=true)
