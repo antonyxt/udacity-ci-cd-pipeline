@@ -61,4 +61,4 @@ Port: 443
 
 * Project deployed on Azure web service
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/3.Webservice-up-azure-portal-configurations.png?raw=true)
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/2.4.Webservice-up-running.png?raw=true)
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/4.Webservice-up-running.png?raw=true)
