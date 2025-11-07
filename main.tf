@@ -21,7 +21,7 @@ resource "azurerm_service_plan" "main" {
   name                = "${var.prefix}-asp"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
-  sku_name            = "S1"
+  sku_name            = "B1"
   os_type             = "Linux"
   tags                = var.tags
 }
@@ -33,9 +33,9 @@ resource "azurerm_linux_web_app" "main" {
   service_plan_id     = azurerm_service_plan.main.id
   site_config {
     application_stack {
-      node_version = "18-lts" # or python_version, dotnet_version, etc.
+      python_version = "3.12" # or node_version, dotnet_version, etc.
     }
-    always_on = true
+    always_on = false
   }
   tags = var.tags
 }

@@ -7,8 +7,8 @@ terraform apply "solution.plan"
 
 # DEPLOY APP
 az webapp up \
-      --name udacity-azure-course-project2-cicd-appservice \
+      --name udacity-ci-cd-pipeline-axt-acn-appservice \
       --resource-group AzureDevops \
       --sku B1 \
 	  --logs \
-	  --runtime PYTHON:3.12
+	  --runtime PYTHON:3.10

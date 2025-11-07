@@ -5,3 +5,8 @@
 __pycache__/
 *.pyc
 .coverage
+.terraform.lock.hcl
+.terraform
+solution.plan
+terraform.tfstate
+terraform.tfstate.backup
