@@ -1,6 +1,7 @@
 provider "azurerm" {
   features {}
-  use_cli = true
+  subscription_id = "e7a256dc-769a-421c-9f8e-e283ed3cbefa"
+  tenant_id       = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 }
 
 data "azurerm_resource_group" "main" {
@@ -25,11 +26,16 @@ resource "azurerm_service_plan" "main" {
   tags                = var.tags
 }
 
-resource "azurerm_app_service" "main" {
+resource "azurerm_linux_web_app" "main" {
   name                = "${var.prefix}-appservice"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
-  app_service_plan_id = azurerm_service_plan.main.id
-
+  service_plan_id     = azurerm_service_plan.main.id
+  site_config {
+    application_stack {
+      node_version = "18-lts" # or python_version, dotnet_version, etc.
+    }
+    always_on = true
+  }
   tags = var.tags
 }
