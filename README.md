@@ -55,3 +55,6 @@ Port: 443
 
 * Project cloned into Azure Cloud Shell
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/1.Project-Cloned-Azure-Cloud-Shell.png?raw=true)
+
+* make all - perform install, lint, test and finally generate test coverage report as below
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/2.Make-all-passing-test.png?raw=true)
