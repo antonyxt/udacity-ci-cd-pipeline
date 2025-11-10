@@ -18,7 +18,7 @@ The predictions are powered by a **pre-trained scikit-learn (sklearn)** machine 
 * Spreadsheet that includes the original and final project plan: [Excel on Github Repo](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/CI_CD_ProjectPlan.xlsx)
 
 ## Architectural Diagram
-https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/ci_cd_pipeline.png
+(https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/ci_cd_pipeline.png)
 
 ## Instructions
 
