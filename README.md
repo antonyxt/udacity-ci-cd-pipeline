@@ -76,3 +76,13 @@ Port: 443
 * Project deployed on Azure web service
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/3.Webservice-up-azure-portal-configurations.png?raw=true)
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/4.Webservice-up-running.png?raw=true)
+
+* Output of a test run
+
+* Successful deploy of the project in Azure Pipelines
+
+* Running Azure App Service from Azure Pipelines automatic deployment
+
+* Successful prediction from deployed flask app in Azure Cloud Shell
+
+* Output of streamed log files from deployed application
