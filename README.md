@@ -22,35 +22,66 @@ The predictions are powered by a **pre-trained scikit-learn (sklearn)** machine 
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+### Required Tools
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+1. Create an [Azure Account](https://portal.azure.com)
+2. Create a [GitHub Account](https://github.com)
 
-* Project running on Azure App Service
+### Getting Started
 
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+1. Open Azure cloud shell
+2. Create gpg keys for ssh access to GitHub repo. This creates files with private and public keys in directory ~/.ssh/
 
 ```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
+user@Azure:~/ ssh-keygen -t rsa
 ```
 
-* Output of streamed log files from deployed application
+3. Copy the new public key file: id_rsa.pub
 
-> 
+```bash
+user@Azure:~/ cat ~/.ssh/id_rsa.pub
+```
+
+4. Add new key to your GitHub profile , paste the key and add some random name.
+
+5. copy the url from SSH tab of the repo
+
+6. Clone it into your azure cloud shell. Adapt the URL to match your forked repo:
+
+```bash
+user@Azure:~/ git clone git@github.com:antonyxt/udacity-ci-cd-pipeline.git
+```
+### Running the Python project
+
+1. change active directory to newly created project folder
+```bash
+user@Azure:~/ cd udacity-ci-cd-pipeline
+```
+
+2. create new python environment and activate virtual environment
+```bash
+user@Azure:~/udacity-ci-cd-pipeline/ python3 -m venv ~/.myenv
+user@Azure:~/udacity-ci-cd-pipeline/ source ~/.myenv/bin/Activate
+```
+
+2. Install dependencies and test the project:
+
+```bash
+(.myenv)user@Azure:~/udacity-ci-cd-pipeline/ make all
+```
+
+3. Create a webapp and deploy code from a local workspace to the app.
+
+The command is required to run from the folder where the code is present. If necessary adapt parameter values for webapp name (-n; needs to be unique), location (-l) and sku.
+
+Example:
+
+```bash
+user@Azure:~/udacity-ci-cd-pipeline/ az webapp up \
+                -n udacity-ci-cd-pipeline-axt-acn-appservice \
+                -l eastus \
+                --sku F1
+```
 
 ## Enhancements
 
