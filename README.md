@@ -3,12 +3,20 @@
 
 # Overview
 
-<TODO: complete this with an overview of your project>
+This repository represents **Project 2** for the [Udacity Azure DevOps Course](https://www.udacity.com/course/cloud-devops-using-microsoft-azure-nanodegree--nd082).  
+It stands as a practical demonstration of **Continuous Integration** and **Continuous Delivery** concepts, bringing together the technical finesse and automation skills cultivated throughout the program.
+
+- A modification to the **main branch** of this repository initiates:
+  - A **Continuous Integration** workflow via *GitHub Actions*.  
+  - A **Continuous Delivery** pipeline through *Azure Pipelines*.
+
+At its core, the project features a **Python Flask Web Application** that provides **housing price predictions** through RESTful API calls.  
+The predictions are powered by a **pre-trained scikit-learn (sklearn)** machine learning model, meticulously trained on **Boston housing data**.
 
 ## Project Plan
 * Trello board: [Udacity Azure Course Project CI/CD pipeline](https://trello.com/b/alLrhhm7/ci-cd-udacity-azure-demo-project)
-* Spreadsheet that includes the original and final project plan: (https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/CI_CD_ProjectPlan.xlsx)
-  * (Contains 5 sheets: Yearly Project Management Plan, Q1, Q2, Q3, Q4)
+* Spreadsheet that includes the original and final project plan: [Excel on Github Repo](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/CI_CD_ProjectPlan.xlsx)
+
 
 ## Instructions
 
