@@ -6,10 +6,9 @@
 <TODO: complete this with an overview of your project>
 
 ## Project Plan
-<TODO: Project Plan
-
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* Trello board: [Udacity Azure Course Project CI/CD pipeline](https://trello.com/b/alLrhhm7/ci-cd-udacity-azure-demo-project)
+* Spreadsheet that includes the original and final project plan: (https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/Docs/CI_CD_ProjectPlan.xlsx)
+  * (Contains 5 sheets: Yearly Project Management Plan, Q1, Q2, Q3, Q4)
 
 ## Instructions
 
@@ -45,7 +44,14 @@ Port: 443
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+- Add **automated security scans** to detect vulnerabilities in early stages. 
+- **Containerize** the application using Docker for consistent environment setup.  
+- Implement **Infrastructure as Code (IaC)** with tools like **Terraform** or **Bicep** for automated resource provisioning.  
+- Extend the CI/CD pipeline with **integration and load testing** stages.  
+- Integrate **monitoring and logging** using **Azure Monitor** or **Application Insights**.  
+- Introduce **environment-based deployments** (Dev, Test, Prod) with approval gates.  
+- Add **code coverage and quality checks** using tools like **Codecov** or **SonarCloud**.  
+- Automate **rollback strategies** and **blue-green deployments** for safer releases.  
 
 ## Demo 
 
