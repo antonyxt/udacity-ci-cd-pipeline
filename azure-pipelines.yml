@@ -18,7 +18,6 @@ stages:
 - stage: BuildStage
   jobs:
     - job: BuildJob
-      pool: myAgentPool
       steps:
         - script: |
             echo Building...
@@ -46,7 +45,6 @@ stages:
   condition: succeeded()
   jobs:
     - deployment: DeployToWebApp
-      pool: myAgentPool
       environment: $(environmentName)
       strategy:
         runOnce:
