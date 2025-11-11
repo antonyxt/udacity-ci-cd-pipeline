@@ -8,11 +8,61 @@ trigger:
 
 pool: my-agent-pool
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  projectRoot: $(System.DefaultWorkingDirectory)
+  environmentName: "production"
+  azureServiceConnectionId: 'my-service-connection'
+  webAppName: 'udacity-demo-at-acn'
+  
+stages:
+- stage: BuildStage
+  jobs:
+    - job: BuildJob
+      pool: myAgentPool
+      steps:
+        - script: |
+            echo Building...
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install --upgrade pip setuptools wheel
+            pip install -r requirements.txt
+          workingDirectory: $(projectRoot)
+          displayName: 'Setting up the build process' 
+        - task: ArchiveFiles@2
+          displayName: 'myStep 4 - Archive files'
+          inputs:
+            rootFolderOrFile: '$(projectRoot)'
+            includeRootFolder: false
+            archiveType: zip
+            archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+            replaceExistingArchive: true
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+        - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+          displayName: 'myStep 5 - Upload package'
+          artifact: drop
+- stage: DeployStage
+  displayName: "Deploy to Azure Web App"
+  dependsOn: BuildStage
+  condition: succeeded()
+  jobs:
+    - deployment: DeployToWebApp
+      pool: myAgentPool
+      environment: $(environmentName)
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+
+            # Download the build artifact
+            - download: current
+              displayName: "Download build artifact"
+
+            # Deploy Azure Web App
+            - task: AzureWebApp@1
+              displayName: "Deploy to Azure Web App"
+              inputs:
+                azureSubscription: $(azureServiceConnectionId)
+                appName: $(webAppName)
+                package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+                appType: webAppLinux
+                startUpCommand: 'pip install -r requirements.txt && gunicorn --bind 0.0.0.0:8000 app:app'
