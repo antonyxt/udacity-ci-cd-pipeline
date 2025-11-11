@@ -1,17 +1,27 @@
+# Variables
+VENV = ~/.udacity-devops
+PYTHON = $(VENV)/bin/python
+PIP = $(VENV)/bin/pip
+
+# Create virtual environment
 setup:
-	python3 -m venv ~/.udacity-devops
+	python3 -m venv $(VENV)
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
 
+# Install/upgrade dependencies (uses venv)
 install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
 
+# Run tests
 test:
-	python -m pytest -vv --cov=.
-	#python -m pytest --nbval notebook.ipynb
+	$(PYTHON) -m pytest -vv --cov=.
 
-
+# Lint Python and Docker code
 lint:
-	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
-	pylint --disable=R,C,W1203,W0702 app.py
+	#$(VENV)/bin/hadolint Dockerfile
+	$(VENV)/bin/pylint --disable=R,C,W1203,W0702 app.py
 
+# Run all tasks in order
 all: install lint test
