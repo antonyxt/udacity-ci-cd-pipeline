@@ -49,25 +49,25 @@ user@Azure:~/ cat ~/.ssh/id_rsa.pub
 6. Clone it into your azure cloud shell. Adapt the URL to match your forked repo:
 
 ```bash
-user@Azure:~/ git clone git@github.com:antonyxt/udacity-ci-cd-pipeline.git
+dl_user [ ~/clouddrive ]$ git clone git@github.com:antonyxt/udacity-ci-cd-pipeline.git
 ```
 ### Running the Python project
 
 1. change active directory to newly created project folder
 ```bash
-user@Azure:~/ cd udacity-ci-cd-pipeline
+odl_user [ ~/clouddrive ]$ cd udacity-ci-cd-pipeline/
 ```
 
 2. create new python environment and activate virtual environment
 ```bash
-user@Azure:~/udacity-ci-cd-pipeline/ python3 -m venv ~/.myenv
-user@Azure:~/udacity-ci-cd-pipeline/ source ~/.myenv/bin/Activate
+odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ python -m venv ~/.myenv
+odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ source ~/.myenv/bin/activate
 ```
 
 2. Install dependencies and test the project:
 
 ```bash
-(.myenv)user@Azure:~/udacity-ci-cd-pipeline/ make all
+(.myenv) odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ make all
 ```
 
 3. Create a webapp and deploy code from a local workspace to the app.
@@ -77,7 +77,7 @@ The command is required to run from the folder where the code is present. If nec
 Example:
 
 ```bash
-user@Azure:~/udacity-ci-cd-pipeline/ az webapp up \
+odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ az webapp up \
                 -n udacity-ci-cd-pipeline-axt-acn-appservice \
                 -l eastus \
                 --sku F1
@@ -104,15 +104,18 @@ user@Azure:~/udacity-ci-cd-pipeline/ az webapp up \
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/1.Project-Cloned-Azure-Cloud-Shell.png?raw=true)
 
 * make all - perform install, lint, test and finally generate test coverage report as below
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/2.Make-all-passing-test.png?raw=true)
+![Screenshot make all in Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/2.Make-all-passing-test.png?raw=true)
 
 * Project deployed on Azure web service
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/3.Webservice-up-azure-portal-configurations.png?raw=true)
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/4.Webservice-up-running.png?raw=true)
+![Screenshot web service up in Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/3.Webservice-up-azure-portal-configurations.png?raw=true)
+
+* Web application up and running
+![Screenshot Web application up and running in browser](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/4.Webservice-up-running.png?raw=true)
 
 * Output of a test run
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/5.make-test-run.png?raw=true)
 
-* Successful deploy of the project in Azure Pipelines
+* Successful completion of CD Pipelines in in Azure portal
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 
