@@ -33,13 +33,13 @@ The predictions are powered by a **pre-trained scikit-learn (sklearn)** machine 
 2. Create gpg keys for ssh access to GitHub repo. This creates files with private and public keys in directory ~/.ssh/
 
 ```bash
-user@Azure:~/ ssh-keygen -t rsa
+ssh-keygen -t rsa
 ```
 
 3. Copy the new public key file: id_rsa.pub
 
 ```bash
-user@Azure:~/ cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub
 ```
 
 4. Add new key to your GitHub profile , paste the key and add some random name.
@@ -49,25 +49,25 @@ user@Azure:~/ cat ~/.ssh/id_rsa.pub
 6. Clone it into your azure cloud shell. Adapt the URL to match your forked repo:
 
 ```bash
-dl_user [ ~/clouddrive ]$ git clone git@github.com:antonyxt/udacity-ci-cd-pipeline.git
+git clone git@github.com:antonyxt/udacity-ci-cd-pipeline.git
 ```
 ### Running the Python project
 
 1. change active directory to newly created project folder
 ```bash
-odl_user [ ~/clouddrive ]$ cd udacity-ci-cd-pipeline/
+cd udacity-ci-cd-pipeline/
 ```
 
 2. create new python environment and activate virtual environment
 ```bash
-odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ python -m venv ~/.myenv
-odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ source ~/.myenv/bin/activate
+python -m venv ~/.myenv
+source ~/.myenv/bin/activate
 ```
 
 2. Install dependencies and test the project:
 
 ```bash
-(.myenv) odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ make all
+make all
 ```
 
 3. Create a webapp and deploy code from a local workspace to the app.
@@ -77,10 +77,10 @@ The command is required to run from the folder where the code is present. If nec
 Example:
 
 ```bash
-odl_user [ ~/clouddrive/udacity-ci-cd-pipeline ]$ az webapp up \
-                -n udacity-ci-cd-pipeline-axt-acn-appservice \
-                -l eastus \
-                --sku F1
+az webapp up \
+	-n udacity-ci-cd-pipeline-axt-acn-appservice \
+	-l eastus \
+	--sku F1
 ```
 
 ## Enhancements
