@@ -78,7 +78,7 @@ Example:
 
 ```bash
 az webapp up \
-	-n udacity-ci-cd-pipeline-axt-acn-appservice \
+	-n udacity-demo-at-acn \
 	-l eastus \
 	--sku F1
 ```
@@ -116,9 +116,11 @@ az webapp up \
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/5.make-test-run.png?raw=true)
 
 * Successful completion of CD Pipelines in in Azure portal
-
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/6.CD-pipeline-completion.png?raw=true)
 * Running Azure App Service from Azure Pipelines automatic deployment
-
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/7.CD-Stage-deployement-completion.png?raw=true)
 * Successful prediction from deployed flask app in Azure Cloud Shell
-
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/8.Prediction-from-Cloud-Shell.png?raw=true)
 * Output of streamed log files from deployed application
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/9.Log-stream-azure-portal.png?raw=true)
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/antonyxt/udacity-ci-cd-pipeline/blob/main/screenshots/10.Log-stream-azur-cli-cloud-shell.png?raw=true)
