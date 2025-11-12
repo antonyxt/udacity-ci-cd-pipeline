@@ -96,7 +96,7 @@ az webapp up \
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+[![Watch the video](https://img.youtube.com/vi/Cof9RptPXBQ/0.jpg)](https://www.youtube.com/watch?v=Cof9RptPXBQ)
 
 ## Screenshots
 
